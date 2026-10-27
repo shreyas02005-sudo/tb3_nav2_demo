@@ -66,7 +66,4 @@ Cartographer SLAM (TurtleBot3 teleop) in this world. The robot flipped once duri
 mapping and corrupted part of the scan, and a second attempt drifted, so I corrected the
 saved map by hand and checked it by comparing the laser scan against the walls in RViz.
 
-## Credits
 
-World built following a Udemy course on ROS 2 Nav2 ("ROS 2 Nav2 [Navigation 2 Stack] -
-with SLAM and Navigation"). Navigation uses the standard Nav2 and TurtleBot3 packages.
