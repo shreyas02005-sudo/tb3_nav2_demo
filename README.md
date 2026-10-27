@@ -77,7 +77,7 @@ export MESA_D3D12_DEFAULT_ADAPTER_NAME=NVIDIA
 
 **World.** I made the three room house in the Gazebo Building Editor and added a few models (a cafe table, a pallet and an SUV) as obstacles. The rooms and doorways are fairly narrow, which makes it a decent test for localization and path planning.
 
-**Map.** I drove the robot around with teleop and built the first map with Cartographer. Teleop was unstable and the odometry reset at times, so the generated map had drift and some bad spots. I cleaned the `.pgm` by hand on gimp and checked it against the live laser scan in RViz until the scan lined up with the walls. A clean map mattered a lot, because AMCL localization was unreliable until the walls matched.
+**Map.** I drove the robot around with teleop and built the first map with Cartographer. Teleop was unstable at times, so the generated map had drift and some bad spots. I cleaned the `.pgm` by hand on gimp and checked it against the live laser scan in RViz until the scan lined up with the walls. A clean map mattered a lot, because AMCL localization get unreliable if there is a layout mismatch.
 
 **Launch file.** `demo.launch.py` starts Gazebo, spawns the robot, brings up Nav2 and RViz, and sets the initial pose for AMCL, so you can send a goal without any manual setup.
 
