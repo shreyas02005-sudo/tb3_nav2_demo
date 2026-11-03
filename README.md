@@ -7,7 +7,7 @@
 ![Platform](https://img.shields.io/badge/Ubuntu-22.04%20%7C%20WSL2-E95420)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-A TurtleBot3 Waffle that navigates on its own around a custom three-room house in Gazebo. I designed the world, built the map with Cartographer SLAM, cleaned it up by hand, and wired everything into a single launch file that starts the simulation, Nav2 and RViz together.
+A TurtleBot3 Waffle that navigates on its own around a custom three room house in Gazebo. I designed the world, built the map with Cartographer SLAM, cleaned it up by hand, and wired everything into a single launch file that starts the simulation, Nav2 and RViz together.
 
 **[Watch the demo video](https://drive.google.com/file/d/1Dsywo7V6zLqBlb3-BRWh4W5r64kanRJs/view?usp=sharing)** (1 min 51 s screen recording, sped up 1.5x)
 
@@ -36,7 +36,7 @@ A TurtleBot3 Waffle that navigates on its own around a custom three-room house i
 ## What it does
 
 - Starts **Gazebo, the robot, Nav2 and RViz** with one command
-- Navigates a **custom three-room house** using the ROS 2 Navigation2 stack with its stock parameter sets
+- Navigates a **custom three room house** using the ROS 2 Navigation2 stack with its stock parameter sets
 - Localises against a **saved occupancy map** that I built with Cartographer and cleaned by hand
 - **Sets the initial pose automatically** about 30 seconds after launch, which you can switch off
 - Accepts goals from **RViz** (Nav2 Goal) or from the **command line**
