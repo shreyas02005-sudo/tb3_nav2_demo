@@ -1,0 +1,52 @@
+name: build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build (ROS 2 Humble)
+    runs-on: ubuntu-22.04
+    container:
+      image: ros:humble-ros-base
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+        with:
+          path: ws/src/tb3_nav2_demo
+
+      - name: Install dependencies
+        shell: bash
+        run: |
+          apt-get update
+          apt-get install -y python3-colcon-common-extensions
+          rosdep update
+          cd ws
+          rosdep install --from-paths src --ignore-src -r -y
+
+      - name: Build workspace
+        shell: bash
+        run: |
+          source /opt/ros/humble/setup.bash
+          cd ws
+          colcon build --event-handlers console_cohesion+
+
+      - name: Check launch file syntax
+        shell: bash
+        run: python3 -m py_compile ws/src/tb3_nav2_demo/launch/demo.launch.py
+
+      - name: Check installed package contents
+        shell: bash
+        run: |
+          share=ws/install/tb3_nav2_demo/share/tb3_nav2_demo
+          for d in launch maps models worlds; do
+            if [ -d "$share/$d" ]; then
+              echo "found $d"
+            else
+              echo "missing $d in installed package"
+              exit 1
+            fi
+          done
