@@ -6,6 +6,7 @@
 ![Robot](https://img.shields.io/badge/Robot-TurtleBot3%20Waffle-lightgrey)
 ![Platform](https://img.shields.io/badge/Ubuntu-22.04%20%7C%20WSL2-E95420)
 ![License](https://img.shields.io/badge/License-Apache%202.0-green)
+![Build](https://github.com/shreyas02005-sudo/tb3_nav2_demo/actions/workflows/build.yml/badge.svg)
 
 A TurtleBot3 Waffle that navigates on its own around a custom three room house in Gazebo. I designed the world, built the map with Cartographer SLAM, cleaned it up by hand, and wired everything into a single launch file that starts the simulation, Nav2 and RViz together.
 
